@@ -360,7 +360,7 @@
         </section>
 
 
-        <!-- <section class="forms-section" id="forms">
+        <section class="forms-section" id="forms">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tagline">Kontakt og support</span>
@@ -371,7 +371,8 @@
                 <div class="form-container-box reveal">
 
                     <div class="tab-headers">
-                        <button class="tab-button active" id="tab-btn-customer" data-tab="customer" onclick="switchTab('customer')">
+                        <button class="tab-button active" id="tab-btn-customer" data-tab="customer"
+                            onclick="switchTab('customer')">
                             <span class="tab-icon">👤</span> Bli kunde
                         </button>
                         <button class="tab-button" id="tab-btn-claim" data-tab="claim" onclick="switchTab('claim')">
@@ -381,62 +382,218 @@
 
 
                     <div class="tab-contents">
- 
-                        <form id="form-customer" class="tab-panel active" onsubmit="handleFormSubmit(event, 'customer')">
+
+                        <form id="form-customer" class="tab-panel active"
+                            onsubmit="handleFormSubmit(event, 'customer')">
                             <h3 class="form-panel-title">Søk om å bli forhandler / bedriftskunde</h3>
-                            <p class="form-panel-desc">Fyll ut feltene under, så tar en av våre rådgivere kontakt med deg i løpet av kort tid.</p>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="c-company">Firmanavn *</label>
-                                    <input type="text" id="c-company" required placeholder="F.eks. Elektro Installasjon AS">
+                            <p class="form-panel-desc">Fyll ut feltene under, så tar en av våre rådgivere kontakt med
+                                deg i løpet av kort tid.</p>
+
+                            <!-- Customer Information -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">👤 Kundeinformasjon</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-name">Navn *</label>
+                                        <input type="text" id="c-name" required placeholder="Bedriftsnavn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-name2">Navn 2</label>
+                                        <input type="text" id="c-name2" placeholder="Alternativt navn">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="c-orgno">Organisasjonsnummer *</label>
-                                    <input type="text" id="c-orgno" required placeholder="9 siffer (F.eks. 123456789)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-address">Adresse *</label>
+                                        <input type="text" id="c-address" required placeholder="Gatenavn og nummer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-address2">Adresse 2</label>
+                                        <input type="text" id="c-address2" placeholder="Leilighet, etasje, osv.">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-postcode">Postnummer *</label>
+                                        <input type="text" id="c-postcode" required placeholder="4 siffer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-city">Poststed *</label>
+                                        <input type="text" id="c-city" required placeholder="F.eks. Oslo">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-county">Fylke / Kommune *</label>
+                                        <input type="text" id="c-county" required placeholder="F.eks. Viken / Oslo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-country">Land</label>
+                                        <select id="c-country">
+                                            <option value="NO" selected>Norge</option>
+                                            <option value="DK">Danmark</option>
+                                            <option value="SE">Sverige</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="c-contact">Kontaktperson *</label>
-                                    <input type="text" id="c-contact" required placeholder="Ditt navn">
+                            <!-- Contact Information -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">📞 Kontaktinformasjon</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-contact-name">Kontaktperson *</label>
+                                        <input type="text" id="c-contact-name" required placeholder="Fullt navn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-contact-email">Kontakt e-post</label>
+                                        <input type="email" id="c-contact-email" placeholder="navn@bedrift.no">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="c-email">E-postadresse *</label>
-                                    <input type="email" id="c-email" required placeholder="navn@bedrift.no">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-contact-phone">Telefonnummer</label>
+                                        <input type="tel" id="c-contact-phone" placeholder="F.eks. 22 00 00 00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-contact-mobile">Mobiltelefon *</label>
+                                        <input type="tel" id="c-contact-mobile" required
+                                            placeholder="F.eks. 900 00 000">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-language">Språk</label>
+                                        <select id="c-language">
+                                            <option value="NO" selected>Norsk</option>
+                                            <option value="SE">Svensk</option>
+                                            <option value="DK">Dansk</option>
+                                            <option value="EN">Engelsk</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="c-phone">Telefonnummer</label>
-                                    <input type="tel" id="c-phone" placeholder="F.eks. 900 00 000">
+                            <!-- Vat & Registration -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">💼 MVA & Foretaksregistrering</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-vat-no">MVA-nummer (VAT Registration No)</label>
+                                        <input type="text" id="c-vat-no" placeholder="F.eks. NO 987654321 MVA">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-reg-no">Organisasjonsnummer (Registration No)</label>
+                                        <input type="text" id="c-reg-no" placeholder="9 siffer (F.eks. 123456789)">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="c-category">Primær produktkategori</label>
-                                    <select id="c-category">
-                                        <option value="batteries">Batterier & Strøm (Varta)</option>
-                                        <option value="lighting">Belysning & LED (Osram)</option>
-                                        <option value="health">Helseprodukter (Braun)</option>
-                                        <option value="hair">Hår & Styling (BaByliss/Revlon)</option>
-                                        <option value="multiple">Flere av kategoriene</option>
-                                    </select>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-ean">EAN-nummer / GLN</label>
+                                        <input type="text" id="c-ean" placeholder="13 siffer">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="c-message">Melding / kommentar</label>
-                                <textarea id="c-message" rows="4" placeholder="Skriv litt om din bedrift og dine behov..."></textarea>
+                            <!-- Invoice -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">✉️ Faktura</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-invoice-email">Faktura e-post</label>
+                                        <input type="email" id="c-invoice-email" placeholder="faktura@bedrift.no">
+                                    </div>
+                                </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block" id="submit-customer-btn">Send søknad</button>
+                            <!-- Customer & Spc -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">🎯 Kunde & Detaljer</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-salesperson">Vår kontaktperson / Selger (Sales Person)</label>
+                                        <input type="text" id="c-salesperson" placeholder="Navn på selger">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-currency">Valuta (Currency)</label>
+                                        <input type="text" id="c-currency" value="NOK" readonly
+                                            style="background-color: rgba(71, 75, 85, 0.05); cursor: not-allowed;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ship To Information -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">🚚 Leveringsadresse</h4>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="c-same-address" checked
+                                        onchange="toggleShippingAddress()">
+                                    <span class="custom-checkbox"></span>
+                                    <label for="c-same-address" class="checkbox-label">Leveringsadresse er den samme som
+                                        fakturaadresse</label>
+                                </div>
+                            </div>
+
+                            <!-- Conditional Shipping Address (displayed dynamically) -->
+                            <div id="shipping-address-section" class="form-section" style="display: none;">
+                                <h4 class="form-section-title">📦 Angi Leveringsadresse</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-ship-name">Mottaker / Navn</label>
+                                        <input type="text" id="c-ship-name" placeholder="Navn på leveringsmottaker">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-ship-country">Land</label>
+                                        <select id="c-ship-country">
+                                            <option value="NO" selected>Norge</option>
+                                            <option value="DK">Danmark</option>
+                                            <option value="SE">Sverige</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-ship-address">Adresse</label>
+                                        <input type="text" id="c-ship-address" placeholder="Gatenavn og nummer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-ship-address2">Adresse 2</label>
+                                        <input type="text" id="c-ship-address2" placeholder="Leilighet, etasje, osv.">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-ship-postcode">Postnummer</label>
+                                        <input type="text" id="c-ship-postcode" placeholder="4 siffer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-ship-city">Poststed</label>
+                                        <input type="text" id="c-ship-city" placeholder="F.eks. Oslo">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="form-section">
+                                <h4 class="form-section-title">ℹ️ Tilleggsinformasjon</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="c-kjede">Kjede (Kjedetilknytning)</label>
+                                        <input type="text" id="c-kjede" placeholder="F.eks. Elon, Power, osv.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="submit-customer-btn">Send
+                                søknad</button>
                         </form>
 
 
                         <form id="form-claim" class="tab-panel" onsubmit="handleFormSubmit(event, 'claim')">
                             <h3 class="form-panel-title">Meld inn reklamasjon eller retur</h3>
-                            <p class="form-panel-desc">Har du opplevd feil på et produkt? Vennligst fyll ut skjemaet under slik at vi kan hjelpe deg raskt.</p>
+                            <p class="form-panel-desc">Har du opplevd feil på et produkt? Vennligst fyll ut skjemaet
+                                under slik at vi kan hjelpe deg raskt.</p>
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -452,7 +609,8 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="cl-product">Produkt / Varenummer *</label>
-                                    <input type="text" id="cl-product" required placeholder="F.eks. Braun ThermoScan 7 eller EAN">
+                                    <input type="text" id="cl-product" required
+                                        placeholder="F.eks. Braun ThermoScan 7 eller EAN">
                                 </div>
                                 <div class="form-group">
                                     <label for="cl-email">Din e-post *</label>
@@ -462,24 +620,28 @@
 
                             <div class="form-group">
                                 <label for="cl-reason">Beskrivelse av feilen *</label>
-                                <textarea id="cl-reason" rows="5" required placeholder="Vennligst beskriv feilen så detaljert som mulig..."></textarea>
+                                <textarea id="cl-reason" rows="5" required
+                                    placeholder="Vennligst beskriv feilen så detaljert som mulig..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block" id="submit-claim-btn">Send reklamasjon</button>
+                            <button type="submit" class="btn btn-primary btn-block" id="submit-claim-btn">Send
+                                reklamasjon</button>
                         </form>
 
                         <div class="success-overlay" id="success-overlay">
                             <div class="success-content">
                                 <div class="success-checkmark">✓</div>
                                 <h3 id="success-title">Henvendelsen er sendt!</h3>
-                                <p id="success-message">Takk for din henvendelse. Vi behandler saken din så fort som mulig og tar kontakt i løpet av neste virkedag.</p>
-                                <button class="btn btn-secondary" onclick="resetFormState()">Send en ny henvendelse</button>
+                                <p id="success-message">Takk for din henvendelse. Vi behandler saken din så fort som
+                                    mulig og tar kontakt i løpet av neste virkedag.</p>
+                                <button class="btn btn-secondary" onclick="resetFormState()">Send en ny
+                                    henvendelse</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
 
 
@@ -487,8 +649,8 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="img/el-torget.png" alt="EL-torget Logo" class="footer-logo">
-                <p class="footer-desc">Din pålitelige elektro- og helsedistributør i Norge. Vi representerer globale
-                    varemerker av høyeste kvalitet.</p>
+                <p class="footer-desc">El-torget er en distributør av sterke merkevarer til kjeder og butikker over hele
+                    Skandinavia. Selskapet er over 25 år.</p>
             </div>
 
             <div class="footer-links">
@@ -503,14 +665,23 @@
             </div>
 
             <div class="footer-contact">
-                <h4>Kontaktinformasjon</h4>
-                <p>📧 E-post: <a href="mailto:post@eltorget.no">post@eltorget.no</a></p>
-                <p>🌐 Nettside: <a href="https://eltorget.no">eltorget.no</a></p>
+                <h4>Kontakt oss</h4>
+                <p>📍 Smånipevegen 1, 5381 Glesvær, Norge</p>
+                <p>📞 Telefon: <a href="tel:+4756319020">+47 56 31 90 20</a></p>
+                <p>📧 E-post: <a href="mailto:post@neteltorget.no">post@neteltorget.no</a></p>
                 <p class="uniweb-note">Redireksjon aktiv: All trafikk fra Uniweb.no sendes hit.</p>
+            </div>
+
+            <div class="footer-hours">
+                <h4>Åpningstider</h4>
+                <p class="hours-sub">📞 Telefon & besøk</p>
+                <p>Mandag – torsdag: 09:00 – 15:30<br>Fredag: 09:00 – 12:00</p>
+                <p class="hours-sub">📦 Lager</p>
+                <p>Mandag – fredag: 07:00 – 15:30</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Eltorget.no. Alle rettigheter reservert.</p>
+            <p>&copy; 2026 El-torget. Alle rettigheter reservert.</p>
         </div>
     </footer>
 
@@ -590,6 +761,32 @@
             });
         }
 
+        // Toggle shipping address visibility and dynamic validation requirements
+        function toggleShippingAddress() {
+            const sameAddressCheckbox = document.getElementById('c-same-address');
+            const shippingSection = document.getElementById('shipping-address-section');
+            if (!shippingSection) return;
+
+            const shipName = document.getElementById('c-ship-name');
+            const shipAddress = document.getElementById('c-ship-address');
+            const shipPostcode = document.getElementById('c-ship-postcode');
+            const shipCity = document.getElementById('c-ship-city');
+
+            if (sameAddressCheckbox.checked) {
+                shippingSection.style.display = 'none';
+                if (shipName) shipName.removeAttribute('required');
+                if (shipAddress) shipAddress.removeAttribute('required');
+                if (shipPostcode) shipPostcode.removeAttribute('required');
+                if (shipCity) shipCity.removeAttribute('required');
+            } else {
+                shippingSection.style.display = 'block';
+                if (shipName) shipName.setAttribute('required', '');
+                if (shipAddress) shipAddress.setAttribute('required', '');
+                if (shipPostcode) shipPostcode.setAttribute('required', '');
+                if (shipCity) shipCity.setAttribute('required', '');
+            }
+        }
+
         // Handle form submissions
         function handleFormSubmit(event, formType) {
             event.preventDefault();
@@ -599,7 +796,7 @@
             const successMessage = document.getElementById('success-message');
 
             if (formType === 'customer') {
-                const company = document.getElementById('c-company').value;
+                const company = document.getElementById('c-name').value;
                 successTitle.innerText = "Søknad mottatt!";
                 successMessage.innerText = `Takk for din søknad, ${company}. Vi har mottatt forespørselen om å bli kunde og tar kontakt med deg på den oppgitte e-postadressen så snart som mulig.`;
             } else if (formType === 'claim') {
@@ -612,12 +809,16 @@
 
             document.getElementById('form-customer').reset();
             document.getElementById('form-claim').reset();
+
+            // Reset shipping address dynamic state
+            toggleShippingAddress();
         }
 
         // Reset form state to fill again
         function resetFormState() {
             const successOverlay = document.getElementById('success-overlay');
             successOverlay.classList.remove('active');
+            toggleShippingAddress();
         }
 
         // Adjust scroll position for sticky header when clicking anchor links

@@ -598,23 +598,40 @@ img {
 
 .category-image-placeholder {
     height: 160px;
-    background: linear-gradient(135deg, #e7eef1 0%, #c8d9de 100%);
+    background-image: url('img/bat1.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
+.category-image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 101, 124, 0.15) 0%, rgba(126, 63, 152, 0.15) 100%);
+    transition: var(--transition);
+}
+
+.category-card:hover .category-image-placeholder::before {
+    background: linear-gradient(135deg, rgba(0, 101, 124, 0.3) 0%, rgba(126, 63, 152, 0.3) 100%);
+}
+
 .category-image-placeholder.lighting {
-    background: linear-gradient(135deg, #f7f1eb 0%, #ecd9c7 100%);
+    background-image: url('img/cat_lighting.png');
 }
 
 .category-image-placeholder.health {
-    background: linear-gradient(135deg, #f0ebf5 0%, #ded0ec 100%);
+    background-image: url('img/cat_health.png');
 }
 
 .category-image-placeholder.hair {
-    background: linear-gradient(135deg, #ebf3f5 0%, #ccdce0 100%);
+    background-image: url('img/cat_styling.png');
 }
 
 .cat-logo-badge {
@@ -626,6 +643,7 @@ img {
     font-size: 16px;
     color: var(--primary);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    z-index: 2;
 }
 
 .category-content {
